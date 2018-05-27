@@ -24,8 +24,6 @@ public class LRUCacheTest {
         cache.put(1, 100);
         cache.put(2, 200);
         cache.put(4, 400);
-        LinkedList l = new LinkedList();
-        l.clear();
         int expectedResult = 200;
         int actualResult = cache.get(2);
 
