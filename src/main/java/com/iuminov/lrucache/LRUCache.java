@@ -71,13 +71,12 @@ public class LRUCache {
     private Node findNodeByKey(int key) {
         Node tempNode = head;
 
-        do {
+        while (tempNode != null) {
             if (tempNode.key == key) {
                 return tempNode;
             }
             tempNode = tempNode.next;
         }
-        while (tempNode != null);
 
         return null;
     }
@@ -85,10 +84,10 @@ public class LRUCache {
     private void alignIndices() {
         Node tempNode = head.next;
 
-        do {
+        while (tempNode != null){
             tempNode.index = tempNode.previous.index + 1;
             tempNode = tempNode.next;
-        } while (tempNode != null);
+        }
     }
 
     private static class Node {
